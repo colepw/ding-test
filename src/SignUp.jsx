@@ -8,73 +8,27 @@ import { useState } from "react";
 // const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 export default function SignUp() {
-  const [formData, setFormData] = useState({ name: "", email: "", password: "" });
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const { name, email, password } = formData;
-    const { user, error } = await supabase.auth.signUp({ email, password });
-
-    if (error) {
-      setErrorMessage(error.message);
-      return;
-    }
-
-    await supabase.from("users").insert([{ id: user.id, name, email, profile_picture: null }]);
-
-    alert("You're Signed Up!");
-    window.location.href = "/home";
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <img src="/images/ding_dark_logo_final.png" alt="Logo" className="w-40 mb-4" />
 
       <p className="text-lg text-gray-700 mb-4">By Dingers...For Dingers🛎️</p>
 
-      <form onSubmit={handleSubmit} className="bg-purple-700 text-white p-6 rounded-lg shadow-md w-full max-w-md">
-        <label className="block mb-2 text-lg">Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full p-2 mb-4 border border-gray-300 rounded text-gray-900"
-          required
-        />
+      <form className="bg-purple-700 text-white p-6 rounded-lg shadow-md w-full max-w-md flex flex-col gap-4">
+        <label className="text-lg">Name:</label>
+        <input type="text" className="w-full p-2 border border-gray-300 rounded text-gray-900" required />
 
-        <label className="block mb-2 text-lg">Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full p-2 mb-4 border border-gray-300 rounded text-gray-900"
-          required
-        />
+        <label className="text-lg">Email:</label>
+        <input type="email" className="w-full p-2 border border-gray-300 rounded text-gray-900" required />
 
-        <label className="block mb-2 text-lg">Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          className="w-full p-2 mb-4 border border-gray-300 rounded text-gray-900"
-          required
-        />
+        <label className="text-lg">Password:</label>
+        <input type="password" className="w-full p-2 border border-gray-300 rounded text-gray-900" required />
 
         <button type="submit" className="w-full bg-white text-purple-700 font-bold py-2 px-4 rounded hover:bg-gray-200">
           Sign Up
         </button>
       </form>
-
-      {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
     </div>
   );
 }
+
