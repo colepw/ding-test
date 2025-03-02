@@ -1,8 +1,3 @@
-const { createClient } = await import("@supabase/supabase-js");
-
-const SUPABASE_URL = "https://ldumvdowufraqlnxzism.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkdW12ZG93dWZyYXFsbnh6aXNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAyOTY1OTgsImV4cCI6MjA1NTg3MjU5OH0.9-tmroLirvetUJNPhRBvpc2D7g26FtoqCbtQgWrlLOI";
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const API_URL = "https://ding-ggzr.onrender.com";
 
 document.getElementById("userForm").addEventListener("submit", async function (event) {
@@ -25,9 +20,10 @@ document.getElementById("userForm").addEventListener("submit", async function (e
             throw new Error(result.error || "Failed to register");
         }
 
-        alert("You're Signed Up!");
-        window.location.href = "home.html";
+        document.getElementById("successMessage").innerText = "Sign-up successful! Redirecting...";
+        setTimeout(() => { window.location.href = "home.html"; }, 2000);
     } catch (error) {
+        console.error("Sign-up Error:", error);
         document.getElementById("errorMessage").innerText = error.message;
     }
 });

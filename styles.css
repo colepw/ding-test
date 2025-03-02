@@ -1,0 +1,446 @@
+/* Use background whitesmoke and dark logo color #a020f0 for default mode
+   Use background color #3b3b38 and light logo color #debded for dark mode
+*/
+
+html {
+    overflow: auto;
+    font-size: 16px;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    overflow: auto;
+    text-align: center;
+}
+
+h1 {
+    color: #a020f0;
+    font-size: 2.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 7vh auto;
+    text-align: center;
+}
+
+h2 {
+    color: #3b3b38;
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5vh auto;
+    text-align: center;
+}
+
+p {
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #3b3b38;
+    margin: 0 auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    background-color: #3b3b38;
+    color: whitesmoke;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #3b3b38;
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+}
+
+form {
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    border: 2px solid #3b3b38;
+    background-color: #a020f0;
+    margin: 2rem auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    color: #3b3b38;
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2vh auto 1vh auto;
+    text-align: center;
+    /* flex: 1; */
+    vertical-align: middle;
+}
+
+form input, form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #3b3b38;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+body.border-container {
+    position: fixed;
+    border: 0.4vw solid;
+    border-color: #a020f0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 30vw;
+    margin-bottom: 20vh;
+    margin: auto;
+    border-radius: 5vw;
+} */
+
+#home-icon {
+    position: fixed;
+}
+
+#user-icon {
+    position: fixed;
+}
+
+/* home logo button */
+.logo-button {
+    position: fixed;
+    top: 0.7vw;
+    left: 0.7vw;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.logo-button img {
+    width: 3.5vw;
+    border: 0.25vw solid;
+    border-color: #a020f0;
+    border-radius: 0.5vw;
+}
+
+
+/* user icon button */
+.user-button {
+    position: fixed;
+    top: 0.7vw;
+    left: 4.9vw;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.user-button img {
+    width: 3.5vw;
+}
+
+/* Sidebar styles */
+.sidebar, .fixed-buttons, .return {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    left: 0.45vw;
+    top: 4.9vw;
+}
+
+button {
+    background-color: #a020f0;
+    color: whitesmoke;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Button styles */
+.sidebar button, .fixed-buttons button, .return button {
+    width: 100px;
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+button:hover, button:disabled {
+    background-color: #debdeb;
+    color: #3b3b38;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+/* search bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh auto;
+}
+
+.search-container input {
+    width: 30vw;
+    height: 2vw;
+    padding: 1vh 1vw;
+    margin: 2vh 1vw 2vh 2vw;
+    border: 0.1vw solid #3b3b38;
+    border-radius: 80vw;
+    font-size: 2vw;
+}
+
+.search-container button {
+    width: 15vw;
+    height: 4.3vw;
+    padding: 1vh 1vw;
+    margin: 2vh 2vw 2vh 1vw;
+    border: 0.1vw solid #3b3b38;
+    border-radius: 80vw;
+    cursor: pointer;
+    font-size: 2vw;
+}
+
+.start-project {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 10px;
+    top: 100px; /* Adjusted position for visibility */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.start-project button {
+    left: 10px;
+    width: 140px;
+    padding: 10px;
+    font-size: 12px;
+    /* background-color: #a020f0;
+    color: whitesmoke; */
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50px; /* Round buttons */
+    transition: background-color 0.3s ease;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.center-image {
+    display: block;
+    margin: auto;
+    margin-top: 5vh;
+}
+
+.enlarge-image {
+    width: 20vw;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: small;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-variant: small-caps;
+    color: #3b3b38;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 20vw;
+    margin: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    padding: 2vw;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-icon {
+    width: 4.5vw;
+    height: 4.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.profile-icon img {
+    width: 5vw;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    max-width: 20vw;
+    margin: auto;
+    padding: 2vw;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.analytics-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns title to top-left */
+    justify-content: flex-start;
+    max-width: 20vw;
+    width: 20vw;
+    padding: 2vw;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-title {
+    margin-bottom: 10px;
+    text-align: start;
+}
+
+.analytics-content {
+    align-self: flex-end; /* Centers content horizontally */
+    text-align: end;
+    width: 100%;
+    padding-top: 20px;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#messageInput {
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+#projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Mobile-Friendly Adjustments */
+@media (max-width: 600px) {
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    form {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    #home-icon, #dingLogo {
+        content: url('images/ding_logo_final.png');
+    }
+    body {
+        background-color: #3b3b38;
+    }
+    h1 {
+        color: #debded;
+    }
+    h2 {
+        color: whitesmoke;
+    }
+    p {
+        color: whitesmoke;
+    }
+    button {
+        background-color: #debdeb;
+        color: #3b3b38
+    }
+    label {
+        color: whitesmoke;
+    }
+    form {
+        background-color: #debded;
+    }
+    .logo-button img {
+        border-color: #debdeb;
+    }
+    body.border-container {
+        border-color: #debded;
+    }
+}
+
